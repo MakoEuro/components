@@ -1,26 +1,21 @@
-import { Component } from "react";
+import React from 'react';
 import Button from "./Button";
 
-class Banner extends Component {
-    render() {
-
-        const { bannerTitle, text, styleType } = this.props;
-
-        return (
-            <form>
-                <h1 className="bannerTitle">{bannerTitle}</h1>
-                <p className="text">{text}</p>
+function Banner(props) {
+    return (
+        <form className="webBanner">
+            <h1 className="bannerTitle">{props.bannerTitle}</h1>
+            <p className="text">{props.text}</p>
                 <Button 
-                styleType={styleType}
-                className='button-primary'
+                styleType='button-primary'
+                name='Find the code'
                 />
                 <Button
-                styleType={styleType}
-                className='button-secondary'
+                styleType='button-secondary'
+                name='Forget it'
                 />
-            </form>
-        );
-    }
+        </form>
+    );
 }
 
 export default Banner;
